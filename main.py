@@ -4,6 +4,7 @@ import requests
 import json
 import random
 from replit import db
+from discord.ext import commands
 
 from keep_alive import keep_alive
 
@@ -47,12 +48,10 @@ def delete_encouragement(index):
 
 
 
-
 @client.event
 async def on_ready():
-  print('We have logged in as {0.user}'.format(client))
-
-
+  print('We have logged in as {0.user}'.format(client)) 
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="to my master Fozz - Beta version"))
 
 @client.event
 async def on_message(message):
